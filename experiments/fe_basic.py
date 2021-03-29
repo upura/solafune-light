@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import StratifiedKFold
 
 from kaggle_utils.features import count_encoding
 from kaggle_utils.features.category_encoding import CategoricalEncoder
