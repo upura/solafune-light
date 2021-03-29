@@ -2,7 +2,7 @@ import argparse
 
 import yaml
 from ayniy.model.runner import Runner
-from sklearn.model_selection import StratifiedKFold
+from sklearn.model_selection import GroupKFold
 
 if __name__ == "__main__":
     """
@@ -13,7 +13,7 @@ if __name__ == "__main__":
     parser.add_argument("--run")
     args = parser.parse_args()
 
-    cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=7)
+    cv = GroupKFold(n_splits=10)
 
     if args.run:
         f = open(args.run, "r+")
