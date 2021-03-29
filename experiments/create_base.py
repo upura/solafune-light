@@ -9,6 +9,7 @@ if __name__ == '__main__':
         feature_names=[
             '../input/feather/train_test.ftr',
             '../input/feather/count_encoding.ftr',
+            '../input/feather/aggregation.ftr',
         ],
         target_col=target_col,
     )
@@ -20,7 +21,7 @@ if __name__ == '__main__':
     print(X_train.shape)
     print(X_train.columns)
 
-    fe_name = 'fe000'
+    fe_name = 'fe001'
     Data.dump(X_train, f'../input/pickle/X_train_{fe_name}.pkl')
     Data.dump(y_train, f'../input/pickle/y_train_{fe_name}.pkl')
     Data.dump(X_test, f'../input/pickle/X_test_{fe_name}.pkl')
