@@ -1,0 +1,28 @@
+description: CatBoostRegressor
+exp_name: 'atmacup8'
+run_name: 'run005'
+fe_name: 'fe002'
+data:
+  sample_submission: '../input/solafune-light/UploadFileTemplate.csv'
+cols_definition:
+  categorical_col: [
+    'Year',
+  ]
+  target_col: 'LandPrice'
+model_name: 'ModelCatRegressor'
+params: {
+  'depth': 5,
+  'learning_rate': 0.1,
+  'iterations': 10000,
+  'loss_function': 'RMSE',
+  'eval_metric': 'RMSE',
+  'random_seed': 777,
+  'allow_writing_files': False,
+  'task_type': "CPU",
+  'early_stopping_rounds': 100
+}
+evaluation_metric: 'rmse'
+advanced:
+  predict_exp:
+  PseudoRunner:
+    y_test_pred: '../output/pred/run003-test.pkl'
